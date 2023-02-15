@@ -5,7 +5,7 @@ const gameContainer = document.getElementById('game-container');
 const flappyImg = new Image();
 flappyImg.src = 'Assets/flappy.png';
 
-var flappySound = new Audio('Assets/sounds/plim.mp3');
+var flappySound = new Audio('Assets/audio/plim.mp3');
 
 const FLAP_SPEED = -5;
 const BIRD_WIDTH =  40;
