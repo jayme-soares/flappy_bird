@@ -1,12 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0;
+  }
+
 body{
     background-color: #73c8a9;
     font-family: 'Press Start 2P', cursive;
     background-image: linear-gradient(to right, #73c8a9, #373b44);
+    margin: 0px;
+    height: 100%;
+
 }
 
 canvas{
     border: 5px solid #2e2e2e;
-    border-radius: 10px;
+    border-top: 30px solid #2e2e2e;
+    border-radius: 15px;
     display: block;
     margin: 50px auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -14,8 +24,18 @@ canvas{
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 1;
+    
 }
-
+#game-key{
+    font-style: italic;
+    text-align: center;
+    font-size: 33px;
+    margin-bottom: 50px;
+    color: rgb(255, 239, 16);
+}
+strong{
+    color: rgb(41, 40, 40);
+}
 .backdrop-blur{
     filter: blur(5px);
 }
@@ -23,7 +43,7 @@ canvas{
 #end-menu {
     display: none;
     margin: 50px auto;
-    width: 200px;
+    width: 250px;
     padding: 20px;
     text-align: center;
     background-color: white;
@@ -36,10 +56,13 @@ canvas{
 }
 
 #score-display{
-    color: #fff;
+    color: rgb(255, 239, 16);
     font-size: 2em;
-    text-align: center;
+    text-align: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }
 
 button{
@@ -54,8 +77,9 @@ button{
 }
 
 button:hover{
-    background-color: #333;
-    transform: translatey(-2px);
+    background-color: rgb(102, 102, 102);
+    transform: translatey(-5px);
+    font-size: 1.1em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
