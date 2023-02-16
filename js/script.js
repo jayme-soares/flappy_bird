@@ -31,13 +31,21 @@ let highScore = 0;
 
 let scored = false;
 
-
-document.body.onkeyup = function(e) {
-    if (e.code == 'Space', 'w') {
-        birdVelocity = FLAP_SPEED;
-        jumpSound.play()
+function jump() {
+    birdVelocity = FLAP_SPEED;
+    jumpSound.play();
+  }
+  
+  document.addEventListener("keydown", function(e) {
+    if (e.code == "Space" || e.key == "w") {
+      jump();
     }
-}
+  });
+  
+  document.addEventListener("touchstart", function(e) {
+    jump();
+  });
+  
 
 document.getElementById('restart-button').addEventListener('click', function(){
     hideEndMenu();
