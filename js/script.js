@@ -6,6 +6,9 @@ const flappyImg = new Image();
 flappyImg.src = 'Assets/flappy.png';
 
 var flappySound = new Audio('Assets/audio/plim.mp3');
+var gameMusic = new Audio('Assets/audio/music.mp3')
+var endSound = new Audio('Assets/audio/end.mp3')
+var jumpSound = new Audio('Assets/audio/jump.mp3')
 
 const FLAP_SPEED = -5;
 const BIRD_WIDTH =  40;
@@ -28,9 +31,11 @@ let highScore = 0;
 
 let scored = false;
 
+
 document.body.onkeyup = function(e) {
-    if (e.code == 'Space') {
+    if (e.code == 'Space', 'w') {
         birdVelocity = FLAP_SPEED;
+        jumpSound.play()
     }
 }
 
@@ -38,13 +43,10 @@ document.getElementById('restart-button').addEventListener('click', function(){
     hideEndMenu();
     resetGame();
     loop();
+    endSound.pause()
 })
 
-function playSound() {
-    if (scored = true){
-        flappySound.play();
-    }
-}
+
 
 function increaseScore() {
     if (birdX > pipeX + PIPE_WIDTH &&
@@ -54,6 +56,7 @@ function increaseScore() {
                 score++;
                 scoreDiv.innerHTML = score;
                 scored = true;
+                flappySound.play();
                 
                
     }
@@ -61,8 +64,9 @@ function increaseScore() {
     if (birdX < pipeX + PIPE_WIDTH) {
         scored = false;
     }
-
 }
+
+
 
 function collisionCheck() {
     const birdBox = {
@@ -105,13 +109,17 @@ function collisionCheck() {
 
     return false;
 
+
 }
+
 function hideEndMenu(){
     document.getElementById('end-menu').style.display = 'none';
     gameContainer.classList.remove('backdrop-blur');
 }
 
+
 function showEndMenu(){
+    gameMusic.pause();
     document.getElementById('end-menu').style.display = 'block';
     gameContainer.classList.add('backdrop-blur');
     document.getElementById('end-score').innerHTML = score;
@@ -134,7 +142,8 @@ function resetGame() {
 
 function endGame() {
     showEndMenu();
-
+    endSound.play();
+    gameMusic.pause();
 }
 
 function loop () {
@@ -161,7 +170,7 @@ function loop () {
     birdVelocity += birdAcceleration;
     birdY += birdVelocity;
 
-    increaseScore()
+    increaseScore();
     requestAnimationFrame(loop);
 }
 

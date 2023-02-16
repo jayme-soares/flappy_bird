@@ -2,7 +2,11 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0;
-  }
+}
+
+#my{
+    zoom: 65%;
+}
 
 body{
     background-color: #73c8a9;
@@ -13,36 +17,50 @@ body{
 
 }
 
-canvas{
+#game-canvas{
     border: 5px solid #2e2e2e;
     border-top: 30px solid #2e2e2e;
     border-radius: 15px;
     display: block;
     margin: 50px auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-image: url('Assets/Flappy_Bird_Background.png');
+    background-image: url('../Assets/Flappy_Bird_Background.png');
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 1;
     
 }
+
 #game-key{
     font-style: italic;
     text-align: center;
-    font-size: 33px;
+    font-size: 20px;
     margin-bottom: 50px;
     color: rgb(255, 239, 16);
 }
+
 strong{
     color: rgb(41, 40, 40);
 }
+
 .backdrop-blur{
     filter: blur(5px);
 }
 
+#game-title{
+    text-align: center;
+    line-height: 44px;
+}
+
+#game-title h2{
+    font-size: 33px;
+    text-shadow: 0 1px 5px #454444;
+    color:  firebrick;
+}
+
 #end-menu {
     display: none;
-    margin: 50px auto;
+    margin: 350px auto;
     width: 250px;
     padding: 20px;
     text-align: center;
@@ -54,6 +72,7 @@ strong{
     transform: translate(-50%, 50%);
     z-index: 1000;
 }
+
 
 #score-display{
     color: rgb(255, 239, 16);
