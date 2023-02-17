@@ -10,7 +10,7 @@
 
 body{
     background-color: #73c8a9;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', 'Arial', cursive;
     background-image: linear-gradient(to right, #73c8a9, #373b44);
     margin: 0px;
     height: 100%;
