@@ -12,8 +12,8 @@ var jumpSound = new Audio('Assets/audio/jump.mp3')
 
 const FLAP_SPEED = -5;
 const BIRD_WIDTH =  40;
-const BIRD_HEIGHT = 30;
-const PIPE_WIDTH = 50;
+const BIRD_HEIGHT = 50;
+const PIPE_WIDTH = 47;
 const PIPE_GAP = 125;
 
 
