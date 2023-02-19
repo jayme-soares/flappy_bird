@@ -11,10 +11,10 @@ var endSound = new Audio('Assets/audio/end.mp3')
 var jumpSound = new Audio('Assets/audio/jump.mp3')
 
 const FLAP_SPEED = -5;
-const BIRD_WIDTH =  40;
-const BIRD_HEIGHT = 50;
+const BIRD_WIDTH =  69;
+const BIRD_HEIGHT = 19;
 const PIPE_WIDTH = 47;
-const PIPE_GAP = 125;
+const PIPE_GAP = 120;
 
 
 let birdX = 50;
@@ -37,7 +37,7 @@ function jump() {
   }
   
   document.addEventListener("keydown", function(e) {
-    if (e.code == "Space" || e.key == "w") {
+    if (e.code == "Space" || e.key == "w" || e.key == "W") {
       jump();
     }
   });
