@@ -156,7 +156,6 @@ function resetGame() {
     pipeX = 400;
     pipeY = canvas.height - 200;
     pipeSpeed = 1.5; // adiciona esta linha para resetar a velocidade do obstáculo
-    INITIAL_PIPE_GAP = 120;
     score = 0;
 }
 
