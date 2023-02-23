@@ -1,9 +1,10 @@
 body{
     background-color: #73c8a9;
     font-family: 'Press Start 2P', cursive;
-    background-image: linear-gradient(to right, #73c8a9, #373b44);
+    background-image: linear-gradient(to right, #555c6b, #ebe5e5, #555c6b);
     margin: 0px;
     height: 100%;
+    display: flexbox;
 }
 
 #start-menu {
@@ -37,4 +38,12 @@ button:hover{
     font-size: 1.1em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+}
+
+.menu-objects{
+    text-align: center;
+    display: block;
+}
+#pombo-menu{
+    width: 150px;  
 }
