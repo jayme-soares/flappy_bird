@@ -15,6 +15,8 @@ const BIRD_WIDTH =  69;
 const BIRD_HEIGHT = 19;
 const PIPE_WIDTH = 47;
 const PIPE_GAP = 120;
+const MIN_SCORE_TO_INCREASE_SPEED = 5;
+
 
 
 let birdX = 50;
@@ -24,6 +26,8 @@ let birdAcceleration = 0.1;
 
 let pipeX = 400;
 let pipeY = canvas.height - 200;
+let pipeSpeed = 1.5;
+
 
 let scoreDiv = document.getElementById('score-display');
 let score = 0;
@@ -66,7 +70,9 @@ function increaseScore() {
                 scored = true;
                 flappySound.play();
                 
-               
+                if (score >= MIN_SCORE_TO_INCREASE_SPEED) {
+                    pipeSpeed *= 1.1; // Multiplicador de velocidade
+                }
     }
 
     if (birdX < pipeX + PIPE_WIDTH) {
@@ -138,15 +144,17 @@ function showEndMenu(){
 }
 
 function resetGame() { 
-     birdX = 50;
-     birdY = 50;
-     birdVelocity = 0;
-     birdAcceleration = 0.1;
-     pipeX = 400;
-     pipeY = canvas.height - 200;
+    birdX = 50;
+    birdY = 50;
+    birdVelocity = 0;
+    birdAcceleration = 0.1;
+    pipeX = 400;
+    pipeY = canvas.height - 200;
+    pipeSpeed = 1.5; // adiciona esta linha para resetar a velocidade do obstáculo
 
-     score = 0;
+    score = 0;
 }
+
 
 function endGame() {
     showEndMenu();
@@ -168,12 +176,20 @@ function loop () {
         return;
     }
 
-    pipeX -= 1.5;
-
-    if (pipeX < -50) {
+    pipeX -= pipeSpeed; // Usa a nova variável de velocidade
+/*     if (pipeX < -50) {
         pipeX = 400;
         pipeY = Math.random() * (canvas.height - PIPE_GAP) + PIPE_WIDTH;
-    }
+    } */
+    if (pipeX < -PIPE_WIDTH) {
+        pipeX = canvas.width;
+        // Calcula um valor randômico para a posição do gap, dentro de uma faixa central
+        const minGapY = canvas.height * 0.25;
+        const maxGapY = canvas.height * 0.75;
+        const gapY = Math.random() * (maxGapY - minGapY) + minGapY;
+    
+        pipeY = gapY - PIPE_GAP / 2;
+      }
 
     birdVelocity += birdAcceleration;
     birdY += birdVelocity;
@@ -181,5 +197,6 @@ function loop () {
     increaseScore();
     requestAnimationFrame(loop);
 }
+
 
 loop();
