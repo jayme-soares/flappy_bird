@@ -17,6 +17,8 @@ const PIPE_WIDTH = 47;
 const PIPE_GAP = 120;
 const MIN_SCORE_TO_INCREASE_SPEED = 5;
 
+const INITIAL_PIPE_GAP = 120;
+const PIPE_GAP_INCREMENT = 10;
 
 
 let birdX = 50;
@@ -27,7 +29,7 @@ let birdAcceleration = 0.1;
 let pipeX = 400;
 let pipeY = canvas.height - 200;
 let pipeSpeed = 1.5;
-
+let pipeGapSize = INITIAL_PIPE_GAP;
 
 let scoreDiv = document.getElementById('score-display');
 let score = 0;
@@ -62,8 +64,8 @@ document.getElementById('restart-button').addEventListener('click', function(){
 
 function increaseScore() {
     if (birdX > pipeX + PIPE_WIDTH &&
-        (birdY < pipeY + PIPE_GAP || 
-            birdY + BIRD_HEIGHT >pipeY + PIPE_GAP)&&
+        (birdY < pipeY + pipeGapSize || 
+            birdY + BIRD_HEIGHT > pipeY + pipeGapSize + INITIAL_PIPE_GAP) &&
             !scored) {
                 score++;
                 scoreDiv.innerHTML = score;
@@ -71,7 +73,10 @@ function increaseScore() {
                 flappySound.play();
                 
                 if (score >= MIN_SCORE_TO_INCREASE_SPEED) {
-                    pipeSpeed *= 1.1; // Multiplicador de velocidade
+                    pipeSpeed *= 1.05; // Multiplicador de velocidade
+                }
+                if (score % 5 == 0) {
+                    pipeGapSize += PIPE_GAP_INCREMENT;
                 }
     }
 
@@ -151,7 +156,7 @@ function resetGame() {
     pipeX = 400;
     pipeY = canvas.height - 200;
     pipeSpeed = 1.5; // adiciona esta linha para resetar a velocidade do obstáculo
-
+    INITIAL_PIPE_GAP = 120;
     score = 0;
 }
 
@@ -184,11 +189,12 @@ function loop () {
     if (pipeX < -PIPE_WIDTH) {
         pipeX = canvas.width;
         // Calcula um valor randômico para a posição do gap, dentro de uma faixa central
-        const minGapY = canvas.height * 0.25;
-        const maxGapY = canvas.height * 0.75;
-        const gapY = Math.random() * (maxGapY - minGapY) + minGapY;
-    
-        pipeY = gapY - PIPE_GAP / 2;
+        const halfCanvasHeight = canvas.height / 2;
+        const maxPipeGapTop = halfCanvasHeight - (PIPE_GAP / 2);
+        const minPipeGapTop = halfCanvasHeight + (PIPE_GAP / 2);
+        
+        pipeY = Math.random() * (maxPipeGapTop - minPipeGapTop) + minPipeGapTop;
+        
       }
 
     birdVelocity += birdAcceleration;
