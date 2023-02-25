@@ -10,7 +10,7 @@
 
 body{
     background-color: #73c8a9;
-    font-family: 'Press Start 2P', 'Arial', cursive;
+    font-family: 'Press Start 2P', 'Arial', sans-serif;
     background-image: linear-gradient(to right, #73c8a9, #373b44);
     margin: 0px;
     height: 100%;
@@ -130,4 +130,31 @@ button:hover{
             font-size: 0.9em;
             padding: 10px 20px;
         }
+        
+        #game-logo{
+            width: 280px;
+            text-align: center;
+            z-index: -1;
+            margin: 10% 20% 0% 10%;
+        }
+        .menu-objects{
+
+            display: flexbox;
+        }
+        #pombo-menu{
+            position: fixed;
+            top: 80%;
+            left: 25%;
+            width: 80px;
+        }
+        .button-play{
+            text-align: center;
+            margin: 0% 30% 0% 20%;
+            position: fixed;
+            top: 150px;
+            left: 70px;
+            right: 50%;
+            bottom: 50%;
+            z-index: 1000;
+}
     }
