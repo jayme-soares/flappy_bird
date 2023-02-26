@@ -130,31 +130,26 @@ button:hover{
             font-size: 0.9em;
             padding: 10px 20px;
         }
+
+        #pombo-menu{
+            height: 15%;
+            position: fixed;
+            top: 84%;
+            left: 10%;
+            box-shadow: 0px 2px 0px 0px rgba(0, 0, 5, 0.05);
         
-        #game-logo{
-            width: 280px;
-            text-align: center;
-            z-index: -1;
-            margin: 10% 20% 0% 10%;
         }
         .menu-objects{
-
-            display: flexbox;
-        }
-        #pombo-menu{
-            position: fixed;
-            top: 80%;
-            left: 25%;
-            width: 80px;
-        }
-        .button-play{
             text-align: center;
-            margin: 0% 30% 0% 20%;
+        }
+        .button-container{
             position: fixed;
-            top: 150px;
-            left: 70px;
-            right: 50%;
-            bottom: 50%;
+            padding: 25% 0% 25% 40%;
+        
+        }
+        #button-play{
             z-index: 1000;
+            width: 150px;
+        }
 }
-    }
+    

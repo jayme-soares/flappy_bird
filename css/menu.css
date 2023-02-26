@@ -1,30 +1,18 @@
 body{
-    background-color: #73c8a9;
+    background-color: grey;
     font-family: 'Press Start 2P', cursive;
-    background-image: linear-gradient(to right, #555c6b, #ebe5e5, #555c6b);
+    background-image: url("../Assets/Menu-bg.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 660px;
 
 }
-
-/* #start-menu {
-    margin: 150px auto;
-    width: fit-content;
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    z-index: 1000;
-}
- */
 button{
     background-color: #2e2e2e;
     border:none;
     border-radius: 5px;
     color: #fff;
-    width: 50%;
     font-size: 25px;
     padding: 15px 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -39,21 +27,57 @@ button:hover{
     cursor: pointer;
 }
 
-#game-logo{
-    width: 80%;
+#pombo-menu{
+    height: 15%;
+    position: fixed;
+    top: 84%;
+    left: 10%;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 5, 0.05);
+
+}
+.menu-objects{
     text-align: center;
-    z-index: -1;
-    margin: 10% 20% 0% 10%;
+}
+.button-container{
+    padding: 25% 40% 0% 40%;
+
+}
+#button-play{
+    z-index: 1000;
+    width: 150px;
 }
 
-#pombo-menu{
-    position: fixed;
-    top: 80%;
-    left: 25%;
-    width: 80px;
-}
-.button-play{
-    text-align: center;
-    z-index: 1000;
-    margin: 0% 20% 25% 20%;
+
+
+@media only screen and (max-width: 768px) {
+    body{
+        background-color: grey;
+        font-family: 'Press Start 2P', cursive;
+        background-image: url("../Assets/Menu-bg.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 810px;
+    
+    }
+    #pombo-menu{
+        height: 15%;
+        position: fixed;
+        top: 84%;
+        left: 10%;
+        box-shadow: 0px 2px 0px 0px rgba(0, 0, 5, 0.05);
+    
+    }
+    .menu-objects{
+        text-align: center;
+    }
+    .button-container{
+        position: fixed;
+        padding: 110% 0% 0% 30%;
+    
+    }
+    #button-play{
+        z-index: 1000;
+        width: 150px;
+    }
 }
