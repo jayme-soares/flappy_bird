@@ -2,11 +2,6 @@ const canvas =  document.getElementById('game-canvas');
 const ctx = canvas.getContext("2d");
 const gameContainer = document.getElementById('game-container');
 
-const gradient = ctx.createLinearGradient(500, 300,300, 200);
-gradient.addColorStop(0, "darkgrey");
-gradient.addColorStop(0.5, "grey");
-gradient.addColorStop(0, "darkgrey");
-
 const flappyImg = new Image();
 flappyImg.src = 'Assets/flappy.png';
 
@@ -175,7 +170,7 @@ function loop () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(flappyImg, birdX, birdY);
 
-    ctx.fillStyle = gradient;
+    ctx.fillStyle = '#333';
     ctx.fillRect(pipeX, -100, PIPE_WIDTH, pipeY);
     ctx.fillRect(pipeX, pipeY + PIPE_GAP, PIPE_WIDTH, canvas.height - pipeY);
 
