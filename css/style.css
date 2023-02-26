@@ -11,7 +11,9 @@
 body{
     background-color: #73c8a9;
     font-family: 'Press Start 2P', cursive;
-    background-image: linear-gradient(to right, #73c8a9, #373b44);
+    background-image: url(../Assets/game-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0px;
     height: 100%;
 
@@ -47,25 +49,14 @@ strong{
     filter: blur(5px);
 }
 
-#game-title{
-    text-align: center;
-    line-height: 44px;
-}
-
-#game-title h2{
-    font-size: 33px;
-    text-shadow: 0 1px 5px #454444;
-    color:  firebrick;
-}
-
 #end-menu {
     display: none;
     margin: 350px auto;
     width: 250px;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: absolute;
     left: 50%;
@@ -101,4 +92,10 @@ button:hover{
     font-size: 1.1em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+}
+#restart-button, #menu-button a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
 }
