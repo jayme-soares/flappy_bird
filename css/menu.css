@@ -1,16 +1,15 @@
 body{
     background-color: #73c8a9;
     font-family: 'Press Start 2P', cursive;
-    background-image: linear-gradient(to right, #73c8a9, #373b44);
-    margin: 0px;
-    height: 100%;
+    background-image: linear-gradient(to right, #555c6b, #ebe5e5, #555c6b);
+
 }
 
-#start-menu {
+/* #start-menu {
     margin: 150px auto;
-    width: 250px;
-    padding: 20px;
+    width: fit-content;
     text-align: center;
+    padding: 20px;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -19,13 +18,14 @@ body{
     transform: translate(-50%, 50%);
     z-index: 1000;
 }
-
+ */
 button{
     background-color: #2e2e2e;
     border:none;
     border-radius: 5px;
     color: #fff;
-    font-size: 1em;
+    width: 50%;
+    font-size: 25px;
     padding: 15px 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.25s ease;
@@ -37,4 +37,23 @@ button:hover{
     font-size: 1.1em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+}
+
+#game-logo{
+    width: 80%;
+    text-align: center;
+    z-index: -1;
+    margin: 10% 20% 0% 10%;
+}
+
+#pombo-menu{
+    position: fixed;
+    top: 80%;
+    left: 25%;
+    width: 80px;
+}
+.button-play{
+    text-align: center;
+    z-index: 1000;
+    margin: 0% 20% 25% 20%;
 }
