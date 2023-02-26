@@ -118,6 +118,7 @@ button:hover{
         #game-key {
             font-size: 18px;
             margin-bottom: 30px;
+            display: none;
         }
         
         #end-menu {
